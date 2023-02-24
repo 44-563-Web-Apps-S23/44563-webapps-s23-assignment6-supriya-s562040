@@ -9,32 +9,37 @@
 <h2>Painter entry Supriya Bodapati</h2>
 
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <label for="form_painter">The hidden painter name </label>
+    <input type ="password" id="password" name="form1_painter" min=10 max=50 step=2 value="Monet"> <br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="form1_check">Guess the painter </label>
+    <input type ="text" id="check" name="form1_nick"  min=10 max=50 step=2> <br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <input type="button" onclick="checkpainter()" value="check the guess">
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result">Result</p>
 
 <script> 
+var good=0
+var oops=0
 
 function resolveForm (){
     console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    password = document.getElementById("password").value
+    password = document.getElementById("check").value
+    confirmed = confirm("Are these the values? "+password+" and "+check)
     
     out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
+    if(password==check){
+        alart("You got is right") 
+        good=good+1
     } else {
-        out.innerHTML = "Values were not confirmed"
+        oops=oops+1
+        alert('sorry')
     }
+    out.innerHTML="Right count:"+good+"Wrong count:"+oops
 }
 </script>
 
