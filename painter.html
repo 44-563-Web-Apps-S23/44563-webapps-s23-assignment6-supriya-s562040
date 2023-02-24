@@ -9,20 +9,14 @@
 <form>
     <label for="form_painter"> The hidden painter name </label>
     <input type ="password" id="password" name="form_painter" min=10 max=50 step=2 value="Monet"> <br>
-
     <label for="form_check">Guess the painter</label>
     <input type ="text" id="check" name="form_check" min=10 max=50 step=2> <br>
-
     <input type="button" onclick="checkPainter()" value="Check the guess">
-
 </form>
 <p id="result">Result </p>
-
-
 <script> 
 var good=0
 var oops=0
-
 function checkPainter(){
     console.log("Getting form values")
     password = document.getElementById("password").value
