@@ -3,45 +3,43 @@
     <head>
         <tittle>Painter html</title>
     </head>
- </html>
 <body>
 
 <h2>Painter entry Supriya Bodapati</h2>
-
 <form>
-    <label for="form_painter">The hidden painter name </label>
-    <input type ="password" id="password" name="form1_painter" min=10 max=50 step=2 value="Monet"> <br>
+    <label for="form_painter"> The hidden painter name </label>
+    <input type ="password" id="password" name="form_painter" min=10 max=50 step=2 value="Monet"> <br>
 
-    <label for="form1_check">Guess the painter </label>
-    <input type ="text" id="check" name="form1_nick"  min=10 max=50 step=2> <br>
+    <label for="form_check">Guess the painter</label>
+    <input type ="text" id="check" name="form_check" min=10 max=50 step=2> <br>
 
-    <input type="button" onclick="checkpainter()" value="check the guess">
+    <input type="button" onclick="checkPainter()" value="Check the guess">
+
 </form>
+<p id="result">Result </p>
 
-
-<p id="result">Result</p>
 
 <script> 
 var good=0
 var oops=0
 
-function checkpainter (){
+function checkPainter(){
     console.log("Getting form values")
     password = document.getElementById("password").value
-    password = document.getElementById("check").value
+    check = document.getElementById("check").value
     confirmed = confirm("Are these the values? "+password+" and "+check)
     
     out = document.getElementById("result")
     if(password==check){
-        alart("You got is right") 
+        alert("You got it right")
         good=good+1
     } else {
         oops=oops+1
-        alert('sorry')
+        alert('Sorry')
     }
-    out.innerHTML="Right count:"+good+"Wrong count:"+oops
+    out.innerHTML ="Right count: " +good+" Wrong count: "+oops
 }
 </script>
 
 </body>
- 
+</html>
