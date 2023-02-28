@@ -13,6 +13,10 @@
     <input type ="text" id="check" name="form_check" min=10 max=50 step=2> <br>
     <input type="button" onclick="checkPainter()" value="Check the guess">
 </form>
+<div class="container">
+    <img src="bambusa.jpg"id="image"onclick="selectimage()"
+    alt="bambusa.jpg" style="width: 100px;height: 100px;">
+</div>
 <p id="result">Result </p>
 <script> 
 var good=0
@@ -32,6 +36,22 @@ function checkPainter(){
         alert('Sorry')
     }
     out.innerHTML ="Right count: " +good+" Wrong count: "+oops
+}
+function selectimage(){
+    switch (useimage){
+        case 1: useimage=useimage+1
+        image.src="bambusa.jpg";
+        break;
+        case 2: useimage=useimage+1
+        image.src="Oemleria.jpg";
+        break;
+        case 3: useimage=useimage+1
+        image.src="Ageratum.jpg";
+        break;
+    }
+}
+function giveAlert(){
+    alert("Sorry,ran out of guesses.");
 }
 </script>
 
